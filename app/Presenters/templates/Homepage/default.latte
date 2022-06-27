@@ -8,6 +8,8 @@
 	</div>
 
 	{if $form}
+		<hr>
+
 		<div id="info">
 			{if isset($form->err)}
 				<p id="search-error">{$form->err}</p>
@@ -15,22 +17,46 @@
 				<table>
 					<tr>
 						<th>Název firmy</th>
-						<td>{$form->name}</th>
+						<td class="td-data">{$form->name}</th>
+						<td class="td-icon">
+							<span><img class="copy-icon" src="http://clipground.com/images/copy-4.png" title="Zkopírovat do schránky"></span>
+						</td>
 					</tr>
 					<tr>
 						<th>IČO</th>
-						<td>{$form->ico}</td>
+						<td class="td-data">{$form->ico}</td>
+						<td class="td-icon">
+							<span><img class="copy-icon" src="http://clipground.com/images/copy-4.png" title="Zkopírovat do schránky"></span>
+						</td>
 					</tr>
 					<tr>
 						<th>Adresa</th>
-						<td>{$form->city}, {$form->street} č. {$form->snum}</td>
+						<td class="td-data">{$form->city}, {$form->street} č. {$form->snum}</td>
+						<td class="td-icon">
+							<span><img class="copy-icon" src="http://clipground.com/images/copy-4.png" title="Zkopírovat do schránky"></span>
+						</td>
 					</tr>
 					<tr>
 						<th>PSČ</th>
-						<td>{$form->psc}</td>
+						<td class="td-data">{$form->psc}</td>
+						<td class="td-icon">
+							<span><img class="copy-icon" src="http://clipground.com/images/copy-4.png" title="Zkopírovat do schránky"></span>
+						</td>
 					</tr>
 				</table>
 			{/if}
 		</div>
 	{/if}
+
+	<script>
+
+		//get all copy to clipboard icons, set on click => copy to clipboard
+		const icons = document.getElementsByClassName("copy-icon");
+		for (let i = 0; i < icons.length; i++) {
+			icons[i].addEventListener('click', function(e) {
+				const data = e.target.parentNode.parentNode.previousElementSibling.textContent;
+				navigator.clipboard.writeText(data);
+			});
+		}
+	</script>
 {/block}
