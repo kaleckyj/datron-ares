@@ -1,0 +1,19 @@
+{block content}
+	<div id="banner">
+		<h1 n:block=title>Informace ze systému ARES</h1>
+	</div>
+
+	<div id="form">
+		<h2>Vyhledání firmy dle IČO</h2>
+
+		{control searchForm}
+	</div>
+
+	{if $form}
+		<div id="info">
+			<p>ICO: {$form->ico}</p>
+			<p>name {$form->name}</p>
+			{if isset($form->content)}<p>content: {$form->content}</p>{/if}
+		</div>
+	{/if}
+{/block}
