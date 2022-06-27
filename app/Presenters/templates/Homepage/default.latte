@@ -4,16 +4,33 @@
 	</div>
 
 	<div id="form">
-		<h2>Vyhledání firmy dle IČO</h2>
-
 		{control searchForm}
 	</div>
 
 	{if $form}
 		<div id="info">
-			<p>ICO: {$form->ico}</p>
-			<p>name {$form->name}</p>
-			{if isset($form->content)}<p>content: {$form->content}</p>{/if}
+			{if isset($form->err)}
+				<p id="search-error">{$form->err}</p>
+			{else}
+				<table>
+					<tr>
+						<th>Název firmy</th>
+						<td>{$form->name}</th>
+					</tr>
+					<tr>
+						<th>IČO</th>
+						<td>{$form->ico}</td>
+					</tr>
+					<tr>
+						<th>Adresa</th>
+						<td>{$form->city}, {$form->street} č. {$form->snum}</td>
+					</tr>
+					<tr>
+						<th>PSČ</th>
+						<td>{$form->psc}</td>
+					</tr>
+				</table>
+			{/if}
 		</div>
 	{/if}
 {/block}
