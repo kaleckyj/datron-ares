@@ -61,7 +61,6 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
             //$str = '<are:Ares_dotazy xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request_orrg/v_1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request_orrg/v_1.0.0 http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_request_orrg/v_1.0.0/ares_request_orrg.xsd" dotaz_datum_cas="' . $date .'" dotaz_pocet="1" dotaz_typ="Basic" vystup_format="XML" validation_XSLT="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.0/ares_answer.xsl" user_mail="honza.kalecky@centrum.cz" answerNamespaceRequired="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_basic/v_1.0.3" Id="Ares_dotaz"><Dotaz><Pomocne_ID>1</Pomocne_ID><ICO>00025500</ICO></Dotaz></are:Ares_dotazy>';
 
             //$response = $client->GetXmlFile($str);
-            //$response = $client->GetXmlFile($str);
             $response = $client->GetXmlFile($xml->asXML());
 
             var_dump($response);
