@@ -1,0 +1,32 @@
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+hr { border: 0; border-top: 5px solid cyan;}
+
+#banner { background-color: cyan; overflow: auto; padding: 0px 10px; }
+
+#content { width: 60vw; height: 100vh; margin: 0 auto; background-color: lightcyan; }
+#content > div:not(:first-child) { margin: 20px; }
+
+#form input[type=text] { width: 150px; border: 3px solid cyan; outline: none; }
+.button { cursor: pointer; font-size: 16px; width: 158px; padding: 16px; background-color: lightcyan; border: 3px solid cyan; transition-duration: 0.25s; }
+.button:hover, .button:active, .button:focus { background-color: cyan; }
+
+#search-error { background-color: cyan; color: red; font-weight: bold; padding: 10px; border-radius: 10px; width: max-content;}
+#info table { width: 80%; margin: 0 auto; border: 5px solid cyan; border-radius: 10px; border-spacing: 0; }
+#info th { width: 20%; text-align: left; background-color: cyan; }
+#info tr:not(:first-child) th { border-top: 3px solid lightcyan; }
+#info tr:not(:first-child) td { border-top: 3px solid cyan; }
+#info tr:first-child th { border-top: 3px solid transparent; }
+#info tr:first-child td { border-top: 3px solid transparent; }
+#info th, #info td { padding: 10px; }
+
+.td-icon { padding: 0 !important; text-align: center; width: 75px; }
+.copy-icon { cursor: pointer; max-width: 30px; transition-duration: 0.25s; opacity: 0.1; }
+#info tr:hover .copy-icon, .td-icon:hover .copy-icon { opacity: 1; }
+
+#footer { position: fixed; bottom: 0; left: 0; width: 100vw; margin: 0 !important; padding: 10px 0px 10px 0px; text-align: center; background-color: cyan; }
+#github-link { color:black; text-decoration: none; border-bottom: 1px solid darkcyan; transition-duration: 0.25s; }
+#github-link:hover { border-bottom: 1px solid lightcyan; color: darkcyan }
+
+@media only screen and (max-width: 720px) {
+    #content { width: 100vw; margin: 0; }
+}

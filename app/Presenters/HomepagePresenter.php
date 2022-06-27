@@ -40,7 +40,7 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 
         $res = new \STDClass();
 
-        if ($xml->xpath("//are:Pocet_zaznamu")[0] == 0) $res->err = "IČO nebylo nalezeno";
+        if ($xml->xpath("//are:Pocet_zaznamu")[0] == 0) $res->err = "IČO nebylo nalezeno!";
         else {
             $res->ico = $data->ico;
             $res->name = $xml->xpath("//are:Obchodni_firma")[0];
